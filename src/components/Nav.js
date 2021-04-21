@@ -8,7 +8,10 @@ const Nav = () => {
   const [selectedImg, setSelectedImg] = useState(null)
   const [click, setClick] = useState(false)
   const [searchedText, setSearchedText] = useState('')
-
+  /**
+   * below function handles case when user is typing and fetch new images
+   * according to textInput
+   */
   const inputHandler = e => {
     setTextInput(e.target.value)
     if (textInput) {
@@ -22,7 +25,10 @@ const Nav = () => {
     }
     setClick(true)
   }
-
+  /**
+   * after a user has done few searches, they will be stored in localStorage
+   * allowing user to fetch photos/results from any of its previous query
+   */
   const listHandler = e => {
     if (textInput) {
       fetch(
@@ -37,7 +43,9 @@ const Nav = () => {
     setTextInput('')
     setClick(false)
   }
-  /**  */
+  /**
+   * set searched item to local Storage
+   */
   const submitSearch = e => {
     e.preventDefault()
     if (localStorage.hasOwnProperty('rememberMe')) {
@@ -52,6 +60,7 @@ const Nav = () => {
     setTextInput('')
     setClick(false)
   }
+
   return (
     <React.Fragment>
       <div className="navbar">

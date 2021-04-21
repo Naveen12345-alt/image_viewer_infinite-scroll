@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**
+ * generates modal for clicked image
+ */
 const Modal = ({selectedImg, setSelectedImg}) => {
   const handleClick = e => {
     if (e.target.classList.contains('backdrop')) {

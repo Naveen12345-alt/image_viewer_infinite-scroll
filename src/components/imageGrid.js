@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**
+ * generate image grid
+ */
 const ImageGrid = ({imgUrls, setSelectedImg}) => {
   return (
     <div className="img-grid">
